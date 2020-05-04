@@ -35,38 +35,38 @@
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Hi {{ Auth::user()->name }}, Dashboard </div>
+                <div class="card-header">Hi {{ Auth::user()->name }}, Open New Ticket </div>
                 <div class="card-body">
-                    <!-- @if (session('status'))
-                    @endif -->
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header text-center bg-primary">Support</div>
-                                    <div class="card-body text-center">
-                                        <h1>05</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header text-center bg-warning">Pending</div>
-                                    <div class="card-body text-center">
-                                        <h1>05</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header text-center bg-success">Success</div>
-                                    <div class="card-body text-center">
-                                        <h1>05</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <table class="table table-bordered table-striped  table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 6%"> Job Id</th>
+                                <th style="width: 20%">Client Name</th>
+                                <th style="width: 20%">Email Address</th>
+                                <th style="width: 15%">Department</th>
+                                <th style="width: 10%">Priority </th>
+                                <th style="width: 10%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Thornton</td>
+                                <td>asd</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>ads</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

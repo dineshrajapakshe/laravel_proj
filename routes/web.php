@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,47 +13,15 @@
 |
 */
 
-Route::get('/home', function () {
-return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
 });
-
-
- Route::get('/user', function () {
-    return view('Ticket.user');
-});
-
-Route::get('/Callcenter', function () {
-    return view('Callcenter');
-});
-
-Route::get('/Admin', function () {
-    return view('Admin');
-});
-
-Route::get('/Edituser', function () {
-    return view('Edituser');
-});
-
-
-Route::get('/Jobcatogery', function () {
-    return view('Jobcatogery');
-});
-
-Route::get('/test', function () {
-    
-    return view('test');
-});
-
-Route::get('/test1', function () {
-    
-    return view('test1');
-});
-
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource ('tickets', 'ticketsController');
-
-
+Route::get('/admin_dashboard', 'AdminController@index');
+Route::get('/addjob', 'HomeController@add_job')->name('addjob');
+Route::get('/pendingjob', 'HomeController@pending_job')->name('pendingjob');
+Route::get('/cloasedjob', 'HomeController@cloased_job')->name('cloasedjob');
+Route::get('/editpro', 'HomeController@edit_profile')->name('editpro');

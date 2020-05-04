@@ -1346,7 +1346,6 @@ module.exports = function isAbsoluteURL(url) {
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
-var isValidXss = __webpack_require__(/*! ./isValidXss */ "./node_modules/axios/lib/helpers/isValidXss.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1366,10 +1365,6 @@ module.exports = (
     */
       function resolveURL(url) {
         var href = url;
-
-        if (isValidXss(url)) {
-          throw new Error('URL contains XSS injection attempt');
-        }
 
         if (msie) {
         // IE needs attribute set twice to normalize properties
@@ -1416,25 +1411,6 @@ module.exports = (
       };
     })()
 );
-
-
-/***/ }),
-
-/***/ "./node_modules/axios/lib/helpers/isValidXss.js":
-/*!******************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/isValidXss.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isValidXss(requestURL) {
-  var xssRegex = /(\b)(on\w+)=|javascript|(<\s*)(\/*)script/gi;
-  return xssRegex.test(requestURL);
-};
-
 
 
 /***/ }),
@@ -34224,7 +34200,7 @@ return jQuery;
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.0
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -34570,7 +34546,7 @@ function getBordersSize(styles, axis) {
   var sideA = axis === 'x' ? 'Left' : 'Top';
   var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 
-  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+  return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
 }
 
 function getSize(axis, body, html, computedStyle) {
@@ -34725,8 +34701,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   var scrollParent = getScrollParent(children);
 
   var styles = getStyleComputedProperty(parent);
-  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
-  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
+  var borderTopWidth = parseFloat(styles.borderTopWidth);
+  var borderLeftWidth = parseFloat(styles.borderLeftWidth);
 
   // In cases where the parent is fixed, we must ignore negative scroll in offset calc
   if (fixedPosition && isHTML) {
@@ -34747,8 +34723,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
-    var marginTop = parseFloat(styles.marginTop, 10);
-    var marginLeft = parseFloat(styles.marginLeft, 10);
+    var marginTop = parseFloat(styles.marginTop);
+    var marginLeft = parseFloat(styles.marginLeft);
 
     offsets.top -= borderTopWidth - marginTop;
     offsets.bottom -= borderTopWidth - marginTop;
@@ -35687,8 +35663,8 @@ function arrow(data, options) {
   // Compute the sideValue using the updated popper offsets
   // take popper margin in account because we don't have this info available
   var css = getStyleComputedProperty(data.instance.popper);
-  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+  var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
+  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
   var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
 
   // prevent arrowElement from being placed not contiguously to its popper
@@ -37441,7 +37417,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -49537,8 +49513,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// const files = require.context('./', true, /\.vue$/i);
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 /**
@@ -49674,7 +49650,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\r\n  background-color: #fff;\r\n                       ^\r\n      Expected \"{\".\n   ╷\n22 │   background-color: #fff;\n   │                         ^\n   ╵\n  stdin 22:25  root stylesheet\r\n      in C:\\Xamp\\htdocs\\laravel_proj\\resources\\sass\\app.scss (line 22, column 25)\n    at C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass-loader\\dist\\index.js:89:7\n    at Function.call$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:55025:16)\n    at _render_closure1.call$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:33892:12)\n    at _RootZone.runBinary$3$3 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:19871:18)\n    at _RootZone.runBinary$3 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:19875:19)\n    at _FutureListener.handleError$1 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18340:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18628:40)\n    at Object._Future__propagateToListeners (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:3495:88)\n    at _Future._completeError$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18464:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:17863:12)\n    at Object._asyncRethrow (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:3251:17)\n    at C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:10542:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:3274:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:17884:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:17876:25)\n    at _RootZone.runBinary$3$3 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:19871:18)\n    at _RootZone.runBinary$3 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:19875:19)\n    at _FutureListener.handleError$1 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18340:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18628:40)\n    at Object._Future__propagateToListeners (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:3495:88)\n    at _Future._completeError$2 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18464:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:18554:18)\n    at Object._microtaskLoop (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:3545:21)\n    at StaticClosure._startMicrotaskLoop (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:3551:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:17785:21)\n    at invokeClosure (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:1358:26)\n    at Immediate.<anonymous> (C:\\Xamp\\htdocs\\laravel_proj\\node_modules\\sass\\sass.dart.js:1379:18)\n    at processImmediate (internal/timers.js:439:21)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -49685,8 +49661,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Xamp\htdocs\laravel_proj\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Xamp\htdocs\laravel_proj\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\bake\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\bake\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

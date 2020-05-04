@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\Route;
+use Illuminate\Http\RedirectResponse;
 class LoginController extends Controller
 {
     /*
@@ -26,29 +28,29 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::home;
+    
     public function redirectTo(){
         
         // User role
-        $role = Auth::user()->role; 
+        $role = Auth::user()->r_id; 
         
         // Check user role
         switch ($role) {
-            case 'admin':
-                    return '/Callcenter';
+            case '1':
+                    return '/admin_dashboard';
                 break;
-            case 'user':
-                    return '/user';
+            case '2':
+                    return '/callcenter';
                 break; 
-                case 'super user':
-                    return '/Edituser';
+            case '3':
+                    return '/home';
                 break; 
             default:
                     return '/login'; 
                 break;
         }
     }
-    
+
     /**
      * Create a new controller instance.
      *

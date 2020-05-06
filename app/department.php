@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class department extends Model
+class Department extends Model
 {
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $fillable = [
+            'de_id',
+            'name',
+            'remark',
+            'created_at',
+        ];
 }

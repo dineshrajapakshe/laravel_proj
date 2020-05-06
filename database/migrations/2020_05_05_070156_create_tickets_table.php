@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTicketTable extends Migration
+class CreateTicketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateTicketTable extends Migration
      */
     public function up()
     {
-        Schema::create('ticket', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->increments('t_id');
             $table->integer('u_id');
             $table->integer('de_id');
             $table->integer('priority');
-            $table->string('description', 255);
-            $table->string('file', 255);
+            $table->string('description');
+            $table->string('file');
             $table->integer('status');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
@@ -32,6 +33,6 @@ class CreateTicketTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket');
+        Schema::dropIfExists('tickets');
     }
 }

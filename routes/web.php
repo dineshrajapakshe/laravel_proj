@@ -16,12 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('tickets', 'TicketController');
+Route::resource('sysuser', 'SystemUserController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin_dashboard', 'AdminController@index');
-Route::get('/addjob', 'HomeController@add_job')->name('addjob');
-Route::get('/pendingjob', 'HomeController@pending_job')->name('pendingjob');
-Route::get('/cloasedjob', 'HomeController@cloased_job')->name('cloasedjob');
-Route::get('/editpro', 'HomeController@edit_profile')->name('editpro');

@@ -11,6 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
+   @if ((Auth::user()->user_level) == '3')
     <li class="nav-item active">
       <a class="nav-link" href="/tickets">All Jobs</a>
     </li>
@@ -18,8 +19,32 @@
       <a class="nav-link" href="/tickets/create">Create Jobs</a>
     </li>
      <li class="nav-item">
-       <a class="nav-link" href="/sysuser/1/edit">Edit Profile</a>
+       <a class="nav-link" href="/password/reset">Edit Profile</a>
      </li>
+     @endif
+     @if ((Auth::user()->user_level) == '2')
+         <li class="nav-item active">
+           <a class="nav-link" href="/tickets">All Ticket</a>
+         </li>
+
+     @endif
+     @if ((Auth::user()->user_level) == '1')
+        <li class="nav-item active">
+         <a class="nav-link" href="/tickets">All Tickets</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/tickets/create">Create Tickets</a>
+       </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sysuser/create">Add User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/departments/create">Add Department</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/departments">All Department</a>
+        </li>
+     @endif
   </ul>
 </nav>
   <div class="container">

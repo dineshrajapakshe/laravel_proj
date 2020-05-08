@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::resource('tickets', 'TicketController');
 Route::resource('sysuser', 'SystemUserController');
-
+Route::resource('departments', 'DepartmentController');
+Route::resource('pdfview', 'PdfController');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

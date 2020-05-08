@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\SystemUser;
+use App\User;
 
 class SystemUserController extends Controller
 {
@@ -15,7 +16,7 @@ class SystemUserController extends Controller
      */
     public function index()
     {
-       $users = SystemUser::all();
+       $users = User::where('user_level','=','2')->get();
        return view('sysuser.index', compact('users'));
     }
 
@@ -112,4 +113,5 @@ class SystemUserController extends Controller
      $user->delete();
      return redirect('/sysuser')->with('success', 'User deleted!');
     }
+
 }

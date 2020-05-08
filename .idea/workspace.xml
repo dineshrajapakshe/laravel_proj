@@ -23,6 +23,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\JobMangerv1\resources" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -37,13 +42,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588747031800">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588905875082">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588747031800" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588905875082" />
     <state x="555" y="67" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588664029770">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="555" y="67" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588664029770" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1588909141604">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588909141604" />
   </component>
 </project>

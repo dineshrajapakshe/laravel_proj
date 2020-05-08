@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator,Redirect,Response,File;
 use App\Ticket;
 use App\Department;
+use PDF;
 
 class TicketController extends Controller
 {
@@ -16,7 +18,7 @@ class TicketController extends Controller
     public function index()
     {
         $tickets = Ticket::all();
-        $departments = Department::select('de_id','name')->get();
+        $departments = Department::select('id','name')->get();
         return view('tickets.index', compact('tickets','departments'));
     }
 
@@ -27,7 +29,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-        $departments = Department::select('de_id','name')->get();
+        $departments = Department::select('id','name')->get();
         return view('tickets.create',compact('departments'));
     }
 
@@ -116,6 +118,8 @@ class TicketController extends Controller
         $ticket->delete();
         return redirect('/tickets')->with('success', 'Ticket deleted!');
     }
+
+
 
 
 

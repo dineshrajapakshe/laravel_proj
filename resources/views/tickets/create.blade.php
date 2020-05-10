@@ -16,7 +16,7 @@
     <div>
         <a style="margin: 19px;" href="{{ route('tickets.create')}}" class="btn btn-primary">New Job</a>
         </div>
-      <form method="post" action="{{ route('tickets.store') }}" enctype="multiform/form-data">
+      <form method="post" action="{{ route('tickets.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
               <label for="first_name">User Id:</label>
@@ -42,7 +42,7 @@
           </div>
           <div class="form-group">
               <div class="form-group">
-                 <input type="file" class="form-control-file" name="file" id="file" aria-describedby="fileHelp">
+                 <input type="file" name="file" id="file">
                  <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
                </div>
           </div>

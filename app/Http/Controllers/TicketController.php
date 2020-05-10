@@ -46,12 +46,18 @@ class TicketController extends Controller
             'de_id'=>'required',
             'priority'=>'required'
             ]);
+            if($request->hasFile('file')){
+            $file = $request->file('file');
+            $destinationPath = 'upload';
+            $file->move($destinationPath,$file->getClientOriginalName());
+            }
+
             $contact = new Ticket([
             'u_id' => $request->get('u_id'),
             'de_id' => $request->get('de_id'),
             'priority' => $request->get('priority'),
             'description' => $request->get('description'),
-            'file' => $request->get('file'),
+            'file' => $request->file('file')->getClientOriginalName(),
             'status' => $request->get('status')
             ]);
             $contact->save();
@@ -118,8 +124,22 @@ class TicketController extends Controller
         $ticket->delete();
         return redirect('/tickets')->with('success', 'Ticket deleted!');
     }
+   /**
+        * Remove the specified resource from storage.
+        *
+        * @param  file $fi
+        * @return \Illuminate\Http\Response
+   */
 
+    public function getDownload(Request $file)
+    {
+        $myFile = "upload/PDF_UG_WBS_PNR_Retrieve_PNRRET_14.2_009.pdf";
+        $headers = ['Content-Type: application/pdf'];
+        $newName = 'itsolutionstuff-pdf-file-'.time().'.pdf';
 
+        return response()->download($myFile, $newName, $headers);
+
+    }
 
 
 

@@ -25,6 +25,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\JobMangerv1\public" />
+      <recent name="D:\xampp\htdocs\JobMangerv1\resources\css" />
+      <recent name="D:\xampp\htdocs\JobMangerv1\resources\js" />
       <recent name="D:\xampp\htdocs\JobMangerv1\resources" />
     </key>
   </component>
@@ -42,14 +45,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588905875082">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588993421767">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588905875082" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588993421767" />
     <state x="555" y="67" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588664029770">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="555" y="67" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1588664029770" />
+    <state x="1920" y="0" width="1112" height="821" maximized="true" key="dock-window-1" timestamp="1589004759967">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1920" y="0" width="1112" height="821" maximized="true" key="dock-window-1/0.0.1536.834/1920.0.1920.1050@0.0.1536.834" timestamp="1589004759967" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1588909141604">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

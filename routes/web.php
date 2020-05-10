@@ -22,3 +22,4 @@ Route::resource('departments', 'DepartmentController');
 Route::resource('pdfview', 'PdfController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/tickets.getdownload', 'TicketController@getdownload')->name('getdownload');
